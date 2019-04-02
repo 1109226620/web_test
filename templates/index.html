@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gm</title>
+    {#  注意引入文件的方式  #}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
+</head>
+<body>
+ <div class="layui-container">
+    <blockquote class="layui-elem-quote">
+        <h1>分类</h1>
+    </blockquote>
+    <form action="/fenlei/" method="post">
+        <textarea name="txt" id="txt" placeholder="请输入要分类的文段，多条请使用换行隔开" rows="10" cols="80"></textarea >
+        <hr class="layui-bg-red">
+        <input type="submit" value="提交" class="layui-btn"/>
+        {% csrf_token %}
+    </form>
+ </div>
+</body>
+</html>
